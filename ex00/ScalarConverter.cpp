@@ -6,11 +6,26 @@
 /*   By: dasimoes <dasimoes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 17:34:27 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/03/27 15:58:30 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/03/29 16:51:08 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter() {}
+
+ScalarConverter::~ScalarConverter() {}
+
+ScalarConverter::ScalarConverter( const ScalarConverter& other ) 
+{
+	(void)other;
+}
+
+ScalarConverter& ScalarConverter::operator=( const ScalarConverter& other )
+{
+	(void)other;
+	return (*this);
+}
 
 static bool	checkSpecial(std::string value)
 {
@@ -29,17 +44,19 @@ void	ScalarConverter::convert(std::string value)
 	char *end = NULL;
 	double	d = std::strtod(value.c_str(), &end);
 
-	if (*end && *end != 'f' && !checkSpecial(value))
-		d = NAN;
+	if (*end)
+		if (*(end + 1) || *end != 'f')
+			if (!checkSpecial(value))
+				d = NAN;
 	if (value.length() == 1 && !std::isdigit(value[0]))
 		d = static_cast<double>(value[0]);
-	if (std::isinf(d) || std::isnan(d) || d < 0 || d > 127)
+	if (d == HUGE_VAL || d == -HUGE_VAL || d != d || d < 0 || d > 127)
 		std::cout << "char: impossible" << std::endl;
 	else if (d < 32 || d > 126)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: " << "'" << static_cast<char>(d) << "'" << std::endl;
-	if (std::isinf(d) || std::isnan(d) || d < INT_MIN || d > INT_MAX)
+	if (d == HUGE_VAL || d == -HUGE_VAL || d != d || d < INT_MIN || d > INT_MAX)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(d) << std::endl;

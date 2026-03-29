@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 17:34:48 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/03/27 16:42:32 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/03/29 16:17:12 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class	ScalarConverter
 {
 	private:
 		ScalarConverter();
+		~ScalarConverter();
+		ScalarConverter& operator=( const ScalarConverter& other );
+		ScalarConverter( const ScalarConverter& other );
 	public:
 		static void convert(std::string value);
 };
