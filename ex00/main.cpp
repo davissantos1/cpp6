@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 11:20:29 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/03/27 11:22:40 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/03/29 15:54:18 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int ac, char **av)
 					<< std::endl;
 		return (1);
 	}
+	// ScalarConverter* test = new ScalarConverter;
+	// ScalarConverter test;
 	ScalarConverter::convert(av[1]);
 	return (0);
 }
