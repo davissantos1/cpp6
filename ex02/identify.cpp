@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/29 18:34:32 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/03/29 19:08:33 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/03/30 08:57:19 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,5 @@ void identify(Base& p)
 		std::cout << "The identified class is: C" << std::endl;
 		return;
 	} catch (std::bad_cast &e) {}
-	std::cout << "Unknown referrence" << std::endl;
+	std::cout << "Unknown reference" << std::endl;
 }

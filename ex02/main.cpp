@@ -6,7 +6,7 @@
 /*   By: dasimoes <dasimoes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 11:20:29 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/03/29 19:12:24 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/03/30 08:56:57 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 
 	std::cout << std::endl;
 
-	std::cout	<< "========= REFERRENCE IDENTIFICATION TEST ========="
+	std::cout	<< "========= REFERENCE IDENTIFICATION TEST ========="
 				<< std::endl << std::endl;
 
 	std::cout << "Ran identify() on testA" << std::endl;
